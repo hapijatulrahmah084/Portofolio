@@ -1,0 +1,252 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me - Hapijatul Rahmah</title>
+    <link rel="icon" type="image/jpeg" href="gambar/HR.jpeg" />
+    <style>
+      /* Mengambil font modern Google Fonts yang sama dengan beranda */
+      @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        animation: fadeIn 0.6s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Plus Jakarta Sans", "Segoe UI", Roboto, sans-serif;
+        margin: 0;
+        background-color: #f0f4f2; /* Disamakan dengan warna off-white beranda */
+        color: #2e4d3d;
+        line-height: 1.6;
+      }
+
+      /* Navbar disalin persis dari beranda agar konsisten di semua halaman */
+      .menu {
+        background-color: #ffffff;
+        text-align: center;
+        padding: 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .menu a {
+        display: inline-block;
+        color: #2e4d3d;
+        text-decoration: none;
+        padding: 20px 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      /* Menandai halaman aktif (About Me) */
+      .menu a.active {
+        color: #8ba585;
+        border-bottom: 3px solid #2e4d3d;
+      }
+
+      .menu a:hover {
+        background-color: #f4f8f5;
+        color: #8ba585;
+        transform: translateY(-1px);
+      }
+
+      /* Container Utama */
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+
+      /* Layout Dua Kolom untuk Profil */
+      .profile-section {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+      }
+
+      .profile-img-container {
+        flex: 0.9;
+        text-align: center;
+      }
+
+      /* Efek bingkai lingkaran modern untuk foto profil */
+      .profile-img-container img {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        border-radius: 50%; /* Membuat foto melingkar utuh */
+        border: 6px solid #ffffff; /* Bingkai putih tebal */
+        box-shadow: 0 10px 30px rgba(46, 77, 61, 0.12); /* Shadow estetik */
+      }
+
+      .profile-info {
+        flex: 1.1;
+      }
+
+      .sub-title {
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #8ba585;
+        margin-bottom: 10px;
+      }
+
+      .profile-info h1 {
+        color: #2e4d3d;
+        font-size: 2.6rem;
+        font-weight: 800;
+        letter-spacing: -1px;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+
+      .profile-info p {
+        font-size: 1.1rem;
+        color: #4a5d51;
+        margin-bottom: 25px;
+      }
+
+      /* Desain Ulang "Tags Skill" Agar Menarik & Tidak Kaku */
+      .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 35px;
+      }
+
+      .skill-tag {
+        background-color: #ffffff;
+        color: #2e4d3d;
+        padding: 8px 16px;
+        border-radius: 20px; /* Membuat lonjong kapsul sempurna */
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid #e2ede4;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+        transition: all 0.3s ease;
+      }
+
+      .skill-tag:hover {
+        background-color: #2e4d3d;
+        color: #ffffff;
+        transform: translateY(-2px);
+      }
+
+      /* Tombol Hubungi Saya Berkedalaman */
+      .btn-contact {
+        display: inline-block;
+        background-color: #2e4d3d;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 14px 30px;
+        font-weight: 600;
+        border-radius: 8px;
+        box-shadow: 0 4px 14px rgba(46, 77, 61, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .btn-contact:hover {
+        background-color: #1f362a;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(46, 77, 61, 0.3);
+      }
+
+      /* Footer */
+      footer {
+        background: #2e4d3d;
+        color: #f7f7f2;
+        text-align: center;
+        padding: 30px;
+        margin-top: 80px;
+        font-size: 0.95rem;
+      }
+
+      /* Responsif Layar Kecil (HP) */
+      @media (max-width: 768px) {
+        .profile-section {
+          flex-direction: column;
+          text-align: center;
+        }
+        .skills-container {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigasi Utama (Sama persis dengan index.html) -->
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About Me</a>
+      <a href="work.html">Work</a>
+      <a href="kontak.html">Contact</a>
+    </div>
+
+    <div class="container">
+      <div class="profile-section">
+        <!-- Kolom Kiri: Foto Profil Bulat Berbingkai -->
+        <div class="profile-img-container">
+          <!-- Sesuaikan nama file gambarmu di bawah ini -->
+          <img src="gambar/DrawKit.jpeg" alt="Hapijatul Rahmah" />
+        </div>
+
+        <!-- Kolom Kanan: Deskripsi & Skills -->
+        <div class="profile-info">
+          <div class="sub-title">About Me</div>
+          <h1>Hallo, I am Hapijatul Rahmah</h1>
+
+          <p>
+            Hi! I'm Hapijatul Rahmah, a computer science student driven by a
+            passion for technology, web development, and visual arts. I
+            specialize in building modern, responsive websites that are easy to
+            use, combined with solid design principles to capture the perfect
+            user experience. Beyond coding, I love diving into Linux and network
+            security to ensure everything I build runs smoothly and securely.
+            I’m a continuous learner who thrives on expanding my skill set,
+            solving logical problems, and turning creative concepts into fully
+            functional web projects. Let’s connect and create something amazing
+            together!
+          </p>
+
+          <!-- Perubahan visual tags menjadi bentuk kapsul putih minimalis -->
+          <div class="skills-container">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">Flutter</span>
+            <span class="skill-tag">C++</span>
+          </div>
+
+          <a href="kontak.html" class="btn-contact">Let's Work Together</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>Copyright © 2026 Universitas Sapta Mandiri</footer>
+  </body>
+</html>

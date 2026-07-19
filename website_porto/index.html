@@ -1,0 +1,472 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hapijatul Rahmah</title>
+    <link rel="icon" type="image/jpeg" href="gambar/HR.jpeg" />
+    <style>
+      /* Mengambil font modern Google Fonts */
+      @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        animation: fadeIn 0.6s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Plus Jakarta Sans", "Segoe UI", Roboto, sans-serif;
+        margin: 0;
+        /* Warna background off-white kehijauan yang super soft & tidak silau */
+        background-color: #f0f4f2;
+        color: #2e4d3d;
+        line-height: 1.6;
+      }
+
+      /* Header / Hero Section dengan Efek Sorotan Cahaya (Radial) & Grid */
+      header {
+        text-align: center;
+        padding: 120px 20px;
+        position: relative;
+        /* Tengahnya lebih terang, luarnya gelap misterius */
+        background: radial-gradient(circle at center, #3a634e 0%, #1e3329 100%);
+        color: #d4e7d4; /* Warna hijau mint muda yang mewah */
+        overflow: hidden;
+      }
+
+      /* Pola Grid Kotak-Kotak Modern dengan efek memudar di pinggir */
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.05) 1px,
+            transparent 1px
+          );
+        background-size: 30px 30px;
+        mask-image: radial-gradient(circle, black 40%, transparent 80%);
+        -webkit-mask-image: radial-gradient(circle, black 40%, transparent 80%);
+        pointer-events: none;
+      }
+
+      header h1 {
+        font-size: 3.8rem;
+        margin: 0 0 15px 0;
+        font-weight: 800;
+        letter-spacing: 3px;
+        color: #ffffff; /* Putih bersih biar kontrasnya tajam */
+        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      header h3 {
+        font-family: monospace;
+        font-size: 1.3rem;
+        margin: 0;
+        letter-spacing: 1px;
+        color: #fbf5b7; /* Warna krem aksen */
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Navigation Bar Modern dengan Shadow */
+      .menu {
+        background-color: #ffffff;
+        text-align: center;
+        padding: 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .menu a {
+        display: inline-block;
+        color: #2e4d3d;
+        text-decoration: none;
+        padding: 20px 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .menu a:hover {
+        background-color: #f4f8f5;
+        color: #8ba585;
+        transform: translateY(-1px);
+      }
+
+      /* Container Utama */
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 50px 20px;
+      }
+
+      .content {
+        width: 100%;
+      }
+
+      /* Layout Dua Kolom untuk Intro Pembuka */
+      .intro-section {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        margin-bottom: 20px;
+      }
+
+      .intro-text {
+        flex: 1.2;
+      }
+
+      .intro-visual {
+        flex: 0.8;
+        text-align: center;
+      }
+
+      /* Styling gambar mockup / foto di kanan intro */
+      .intro-visual img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 12px 35px rgba(46, 77, 61, 0.15);
+      }
+
+      #judul {
+        color: #2e4d3d;
+        font-size: 2.4rem;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1.15rem;
+        color: #4a5d51;
+        margin-bottom: 20px;
+      }
+
+      .highlight {
+        color: #2e4d3d;
+        background-color: #e2ede4;
+        padding: 3px 10px;
+        border-radius: 6px;
+        font-weight: 600;
+      }
+
+      /* Box Informasi Card - Lebih Berisi & Berkedalaman */
+      .info-card {
+        background: #ffffff;
+        border-left: 6px solid #2e4d3d;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.03);
+        margin: 45px 0;
+      }
+
+      .info-card h3 {
+        color: #2e4d3d;
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+        font-weight: 700;
+      }
+
+      .info-card p {
+        font-size: 1.05rem;
+        margin-bottom: 12px;
+      }
+
+      .info-card p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Formulir Card */
+      .formulir {
+        background: #ffffff;
+        margin-top: 45px;
+        margin-bottom: 45px;
+        border: none;
+        border-radius: 14px;
+        padding: 35px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
+      }
+
+      .formulir h3 {
+        color: #2e4d3d;
+        margin-top: 0;
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      label {
+        font-weight: 600;
+        color: #2e4d3d;
+        display: block;
+        margin-bottom: 8px;
+        font-size: 0.95rem;
+      }
+
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 14px;
+        margin-bottom: 24px;
+        border: 1px solid #cddcd0;
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 1rem;
+        color: #2e4d3d;
+        background-color: #fafdfb;
+        transition: all 0.3s ease;
+      }
+
+      input[type="text"]:focus,
+      select:focus {
+        outline: none;
+        border-color: #2e4d3d;
+        box-shadow: 0 0 0 3px rgba(46, 77, 61, 0.1);
+        background-color: #ffffff;
+      }
+
+      input[type="submit"] {
+        background-color: #2e4d3d;
+        color: white;
+        border: none;
+        padding: 14px 35px;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        box-shadow: 0 4px 12px rgba(46, 77, 61, 0.2);
+      }
+
+      input[type="submit"]:hover {
+        background-color: #1f362a;
+      }
+
+      /* Section SVG Graphics Minimalis */
+      .svg-section {
+        text-align: center;
+        background: #ffffff;
+        padding: 35px;
+        border-radius: 14px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.03);
+        margin-top: 45px;
+      }
+
+      .svg-section h3 {
+        color: #2e4d3d;
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      svg {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      /* Footer */
+      footer {
+        background: #2e4d3d;
+        color: #f7f7f2;
+        text-align: center;
+        padding: 30px;
+        margin-top: 80px;
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+      }
+
+      /* Responsif: Jika layar kecil (HP), layout kolom kembali menumpuk ke bawah */
+      @media (max-width: 768px) {
+        .intro-section {
+          flex-direction: column;
+          text-align: center;
+          gap: 30px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Hai There!</h1>
+      <h3>Im Hapijatul Rahmah</h3>
+    </header>
+
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="work.html">Work</a>
+      <a href="kontak.html">Contact</a>
+    </div>
+
+    <div class="container">
+      <div class="content">
+        <!-- BAGIAN BARU: Layout Intro Dua Kolom -->
+        <div class="intro-section">
+          <!-- Kolom Kiri: Teks -->
+          <div class="intro-text">
+            <h2 id="judul">Crafting Digital Experience as a Web Developer</h2>
+            <p>
+              I build responsive websites and design professional visuals for
+              businesses.
+            </p>
+            <p>
+              Create a web project like
+              <span class="highlight">Portfolio</span>,
+              <span class="highlight">e-Commerce</span>, and
+              <span class="highlight">Web Magazine</span>.
+            </p>
+          </div>
+          <!-- Kolom Kanan: Visual/Foto Placeholder (Bisa diganti file fotomu sendiri nanti) -->
+          <div class="intro-visual">
+            <img
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80"
+              alt="Creative Workspace"
+            />
+          </div>
+        </div>
+
+        <!-- Bagian Informasi yang lebih panjang dan berbobot -->
+        <div class="info-card">
+          <h3>What I Do</h3>
+          <p>
+            I am passionate about bridging the gap between functional code and
+            beautiful visual design. As a web developer, I specialize in
+            crafting clean, responsive, and user-friendly websites that perform
+            flawlessly across all devices.
+          </p>
+          <p>
+            Complementing my technical skills, my background as a graphic
+            designer allows me to create compelling visual identities, digital
+            assets, and layouts that capture attention. Whether you need a fully
+            custom web platform or a striking visual concept for your business,
+            I bring both logic and creativity together to help your brand grow
+            and stand out in the digital landscape.
+          </p>
+        </div>
+
+        <!-- Formulir Kontak dengan CTA Interaktif -->
+        <div class="formulir">
+          <h3>Bring Your Ideas to Life</h3>
+
+          <form>
+            <label>Nama</label>
+            <input type="text" placeholder="your name" />
+
+            <label>Email</label>
+            <input type="text" placeholder="your email" />
+
+            <label>Types Of Website</label>
+            <select>
+              <option>Portfolio</option>
+              <option>e-Commerce</option>
+              <option>Magazine</option>
+            </select>
+
+            <input type="submit" value="Get in Touch" />
+          </form>
+        </div>
+
+        <!-- SVG Section Minimalis Estetik -->
+        <div class="svg-section">
+          <h3>Let's Join Us</h3>
+
+          <svg viewBox="0 0 400 220" width="100%" height="220">
+            <!-- Background lingkaran besar transparan -->
+            <circle cx="200" cy="110" r="90" fill="#eef4ef" />
+
+            <!-- Orang Kiri -->
+            <g fill="#A3C9A8">
+              <circle cx="140" cy="80" r="20" />
+              <path d="M110 150 C110 120, 170 120, 170 150 Z" />
+            </g>
+
+            <!-- Orang Tengah (Leader) -->
+            <g fill="#2E4D3D">
+              <circle cx="200" cy="70" r="24" />
+              <path d="M165 155 C165 120, 235 120, 235 155 Z" />
+            </g>
+
+            <!-- Orang Kanan -->
+            <g fill="#8ba585">
+              <circle cx="260" cy="80" r="20" />
+              <path d="M230 150 C230 120, 290 120, 290 150 Z" />
+            </g>
+
+            <!-- Tanda Plus (+) Minimalis -->
+            <g transform="translate(265, 50)">
+              <circle cx="15" cy="15" r="14" fill="#fbf5b7" />
+              <line
+                x1="15"
+                y1="9"
+                x2="15"
+                y2="21"
+                stroke="#2E4D3D"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+              <line
+                x1="9"
+                y1="15"
+                x2="21"
+                y2="15"
+                stroke="#2E4D3D"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+            </g>
+
+            <!-- Teks SVG Modern -->
+            <text
+              x="200"
+              y="200"
+              text-anchor="middle"
+              font-size="16"
+              fill="#2E4D3D"
+              font-weight="700"
+              letter-spacing="3px"
+            >
+              JOIN THE TEAM
+            </text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <footer>Copyright © 2026 Universitas Sapta Mandiri</footer>
+  </body>
+</html>

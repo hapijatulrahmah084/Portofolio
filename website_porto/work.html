@@ -1,0 +1,278 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Works - Hapijatul Rahmah</title>
+    <link rel="icon" type="image/jpeg" href="gambar/HR.jpeg" />
+    <style>
+      /* Mengambil font modern Google Fonts */
+      @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        animation: fadeIn 0.6s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Plus Jakarta Sans", "Segoe UI", Roboto, sans-serif;
+        margin: 0;
+        background-color: #f0f4f2; /* Selaras dengan Beranda & About */
+        color: #2e4d3d;
+        line-height: 1.6;
+      }
+
+      /* Navbar Navigasi Global */
+      .menu {
+        background-color: #ffffff;
+        text-align: center;
+        padding: 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .menu a {
+        display: inline-block;
+        color: #2e4d3d;
+        text-decoration: none;
+        padding: 20px 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      /* Menandai halaman aktif (Work) */
+      .menu a.active {
+        color: #8ba585;
+        border-bottom: 3px solid #2e4d3d;
+      }
+
+      .menu a:hover {
+        background-color: #f4f8f5;
+        color: #8ba585;
+        transform: translateY(-1px);
+      }
+
+      /* Container Utama */
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+
+      .header-section {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .header-section h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        color: #2e4d3d;
+        margin: 0 0 10px 0;
+        letter-spacing: -1px;
+      }
+
+      .header-section p {
+        font-size: 1.15rem;
+        color: #657b6c;
+        margin: 0;
+      }
+
+      /* Tata Letak Grid Kartu Proyek Modern */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      /* Desain Kartu Proyek */
+      .project-card {
+        background-color: #ffffff;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+        border: 1px solid #e2ede4;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(46, 77, 61, 0.1);
+        border-color: #2e4d3d;
+      }
+
+      /* Banner/Gambar Proyek Minimalis Berwarna */
+      .project-banner {
+        height: 140px;
+        background: linear-gradient(135deg, #a3c9a8 0%, #8ba585 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+      }
+
+      /* Memberikan variasi warna gradasi banner secara otomatis */
+      .project-card:nth-child(2) .project-banner {
+        background: linear-gradient(135deg, #2e4d3d 0%, #3e6853 100%);
+      }
+      .project-card:nth-child(3) .project-banner {
+        background: linear-gradient(135deg, #4b6b58 0%, #2e4d3d 100%);
+      }
+      .project-card:nth-child(4) .project-banner {
+        background: linear-gradient(135deg, #8ba585 0%, #4b6b58 100%);
+      }
+
+      .project-body {
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .project-body h3 {
+        margin: 0 0 12px 0;
+        color: #2e4d3d;
+        font-size: 1.3rem;
+        font-weight: 700;
+      }
+
+      .project-body p {
+        margin: 0 0 25px 0;
+        color: #556b5e;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        flex-grow: 1; /* Biar panjang deskripsi otomatis seimbang */
+      }
+
+      /* Tombol Detail Link */
+      .btn-detail {
+        display: block;
+        text-align: center;
+        background-color: #f0f5f1;
+        color: #2e4d3d;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+      }
+
+      .btn-detail:hover {
+        background-color: #2e4d3d;
+        color: #ffffff;
+      }
+
+      /* Footer */
+      footer {
+        background: #2e4d3d;
+        color: #f7f7f2;
+        text-align: center;
+        padding: 30px;
+        margin-top: 80px;
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigasi Terpadu Global -->
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="work.html" class="active">Work</a>
+      <a href="kontak.html">Contact</a>
+    </div>
+
+    <div class="container">
+      <div class="header-section">
+        <h1>My Projects</h1>
+        <p>Technical explorations and creative solutions I have developed.</p>
+      </div>
+
+      <!-- Grid Portfolio -->
+      <div class="projects-grid">
+        <!-- Proyek 1 -->
+        <div class="project-card">
+          <div class="project-banner">PROJECT 01</div>
+          <div class="project-body">
+            <h3>Personal Portfolio</h3>
+            <p>
+              Designing and building an interactive portfolio website using
+              HTML, CSS, and custom SVG, with a focus on responsive layout and
+              modern aesthetic alignment.
+            </p>
+          </div>
+        </div>
+
+        <!-- Proyek 2 -->
+        <div class="project-card">
+          <div class="project-banner">PROJECT 02</div>
+          <div class="project-body">
+            <h3>Database Normalization</h3>
+            <p>
+              Designing a transactional database architecture for an electronic
+              sales system up to the 3NF stage, and implementing SQL stored
+              procedures for automated inventory management.
+            </p>
+          </div>
+        </div>
+
+        <!-- Proyek 3 -->
+        <div class="project-card">
+          <div class="project-banner">PROJECT 03</div>
+          <div class="project-body">
+            <h3>Network Engineering</h3>
+            <p>
+              Configuring a static routing network architecture for three
+              departments using Cisco Packet Tracer to optimize bandwidth
+              distribution and data security across divisions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Proyek 4 -->
+        <div class="project-card">
+          <div class="project-banner">PROJECT 04</div>
+          <div class="project-body">
+            <h3>OOP Design Patterns</h3>
+            <p>
+              Developing the implementation of structural and creational design
+              patterns (such as Singleton and Factory) in Python to enhance the
+              efficiency of application configuration management.
+            </p>
+            <a href="#" class="btn-detail">Lihat Detail</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>Copyright © 2026 Universitas Sapta Mandiri</footer>
+  </body>
+</html>

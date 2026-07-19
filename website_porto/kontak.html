@@ -1,0 +1,327 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Me - Hapijatul Rahmah</title>
+    <link rel="icon" type="image/jpeg" href="gambar/HR.jpeg" />
+    <style>
+      /* Mengambil font modern Google Fonts */
+      @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap");
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        animation: fadeIn 0.6s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Plus Jakarta Sans", "Segoe UI", Roboto, sans-serif;
+        margin: 0;
+        background-color: #f0f4f2; /* Disamakan dengan tema off-white beranda */
+        color: #2e4d3d;
+        line-height: 1.6;
+      }
+
+      /* Navbar Navigasi Terpadu Global */
+      .menu {
+        background-color: #ffffff;
+        text-align: center;
+        padding: 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .menu a {
+        display: inline-block;
+        color: #2e4d3d;
+        text-decoration: none;
+        padding: 20px 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      /* Menandai halaman aktif (Contact) */
+      .menu a.active {
+        color: #8ba585;
+        border-bottom: 3px solid #2e4d3d;
+      }
+
+      .menu a:hover {
+        background-color: #f4f8f5;
+        color: #8ba585;
+        transform: translateY(-1px);
+      }
+
+      /* Container Utama */
+      .container {
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+
+      /* Kartu Utama Pembungkus Kontak */
+      .contact-card {
+        background-color: #ffffff;
+        border-radius: 16px;
+        padding: 45px;
+        box-shadow: 0 10px 35px rgba(46, 77, 61, 0.05);
+        border: 1px solid #e2ede4;
+      }
+
+      .contact-header {
+        text-align: center;
+        margin-bottom: 45px;
+      }
+
+      .contact-header h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        color: #2e4d3d;
+        margin: 0 0 10px 0;
+        letter-spacing: -1px;
+      }
+
+      .contact-header p {
+        font-size: 1.1rem;
+        color: #657b6c;
+        margin: 0;
+      }
+
+      /* Pembagian Tata Letak 2 Kolom */
+      .contact-grid {
+        display: flex;
+        gap: 50px;
+      }
+
+      .contact-info {
+        flex: 1;
+      }
+
+      .contact-form {
+        flex: 1.2;
+      }
+
+      .contact-info h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #2e4d3d;
+        margin-top: 0;
+        margin-bottom: 25px;
+      }
+
+      /* Detail List Informasi dengan Icon Simpel */
+      .info-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        font-size: 1.05rem;
+      }
+
+      .info-icon {
+        font-size: 1.2rem;
+        background-color: #e2ede4;
+        width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+      }
+
+      .info-text strong {
+        color: #2e4d3d;
+      }
+
+      .info-text span {
+        color: #556b5e;
+      }
+
+      .contact-desc {
+        margin-top: 30px;
+        font-size: 1rem;
+        color: #657b6c;
+        background-color: #f7faf8;
+        padding: 20px;
+        border-radius: 8px;
+        border-left: 4px solid #8ba585;
+      }
+
+      /* Desain Form & Input */
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 14px 18px;
+        border: 1px solid #cddcd0;
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 0.95rem;
+        color: #2e4d3d;
+        background-color: #fafdfb;
+        transition: all 0.3s ease;
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      /* Efek menyala lembut saat kolom input diklik */
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #2e4d3d;
+        box-shadow: 0 0 0 4px rgba(46, 77, 61, 0.08);
+        background-color: #ffffff;
+      }
+
+      /* Tombol Kirim Pesan Selaras Tema Beranda */
+      .btn-submit {
+        width: 100%;
+        background-color: #2e4d3d;
+        color: #ffffff;
+        border: none;
+        padding: 15px;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(46, 77, 61, 0.15);
+      }
+
+      .btn-submit:hover {
+        background-color: #1f362a;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(46, 77, 61, 0.25);
+      }
+
+      /* Footer */
+      footer {
+        background: #2e4d3d;
+        color: #f7f7f2;
+        text-align: center;
+        padding: 30px;
+        margin-top: 80px;
+        font-size: 0.95rem;
+      }
+
+      /* Responsif jika dibuka via Smartphone */
+      @media (max-width: 768px) {
+        .contact-grid {
+          flex-direction: column;
+          gap: 40px;
+        }
+        .contact-card {
+          padding: 25px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigasi Utama Terpadu -->
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="work.html">Work</a>
+      <a href="kontak.html" class="active">Contact</a>
+    </div>
+
+    <div class="container">
+      <div class="contact-card">
+        <div class="contact-header">
+          <h1>Contact Me</h1>
+          <p>Contact me for discussions, collaborations, or other inquiries.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Kolom Kiri: Informasi Kontak -->
+          <div class="contact-info">
+            <h2>Contact Information</h2>
+
+            <div class="info-item">
+              <div class="info-icon">✉️</div>
+              <div class="info-text">
+                <strong>Email:</strong><br />
+                <span>hapijatulrahmah@email.com</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">📞</div>
+              <div class="info-text">
+                <strong>Phone:</strong><br />
+                <span>083867899005</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">📍</div>
+              <div class="info-text">
+                <strong>Location:</strong><br />
+                <span>Kalimantan Selatan, Indonesia</span>
+              </div>
+            </div>
+
+            <div class="contact-desc">
+              I am open to discussing technology, web development, Linux, or
+              other projects.
+            </div>
+          </div>
+
+          <!-- Kolom Kanan: Form Kirim Pesan -->
+          <div class="contact-form">
+            <form>
+              <div class="form-group">
+                <form
+                  action="https://formspree.io/f/mlgqbzpe"
+                  method="post"
+                ></form>
+                <input type="text" placeholder="your full name" required />
+              </div>
+
+              <div class="form-group">
+                <input type="email" placeholder="Email" required />
+              </div>
+
+              <div class="form-group">
+                <textarea placeholder="Write your message" required></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>Copyright © 2026 Universitas Sapta Mandiri</footer>
+  </body>
+</html>
